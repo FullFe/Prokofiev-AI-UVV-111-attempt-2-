@@ -29,3 +29,4 @@ double Rectangle::Gety2() const
 {
 	return 0;
 }
+// aaa
