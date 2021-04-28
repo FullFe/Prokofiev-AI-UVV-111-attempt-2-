@@ -12,5 +12,5 @@ int main()
 	Primer.output();
 
 
-
+	return 0;
 }

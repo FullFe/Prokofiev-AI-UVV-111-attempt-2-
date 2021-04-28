@@ -53,6 +53,8 @@ public:
     * \param y2 : Координата правого нижнего угла по оси Y
     */
     Rectangle(const double x1, const double y1, const double x2, const double y2);
+
+
     /**
    * \brief Параметрический конструктор
    * \param width : ширина
@@ -60,6 +62,8 @@ public:
 
    */
     Rectangle(const unsigned double width, const unsigned double length);
+
+
     /**
     * \brief Деконструктор
     */
@@ -67,28 +71,29 @@ public:
     
 
     /**
-    * \brief Метод вывода координат
-    * \return Кординаты
-    */
-    double output(const double x1, const double y1, const double x2, const double y2);
-    /**
     * \brief Метод подсчета длины
     * \return Длина
     */
-    double length(const double x1, const double x2);
+    double Length(const double x1, const double x2);
+
+
     /**
    * \brief Метод подсчета ширины
    * \return Ширина
    */
-    double width(const double y1, const double y2);
+    double Width(const double y1, const double y2);
+
+
     /**
    * \brief Метод получения площади
    * \return Площадь
    */
-    double getArea(const unsigned double length, const unsigned double width, const double area);
+    unsigned double Area(const unsigned double length, const unsigned double width);
+
+
     /**
    * \brief Метод перемещения
    */
-    void move(const unsigned double length, const unsigned double width, const double x1, const double y1);
+    void Move(const unsigned double length, const unsigned double width, const double x1, const double y1);
 
 }

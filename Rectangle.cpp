@@ -21,64 +21,81 @@ Rectangle::~Rectangle();
 
 
 
-double setX1()
+void Rectangle::setX1(double newX1)
 {
-	return x1;
+	 x1 = newX1;
 }
 
 
-double setY1()
+void Rectangle::setY1(double newY1)
 {
-	return y1;
+	y1 = newY1;
 }
 
 
-double setX2()
+void Rectangle::setX2(double newX2)
 {
-	return x2;
-}
-
-
-
-double setY2()
-{
-	return y2;
-}
-
-
-double getLength()
-{
-	cout << 'Length is' << length << endl;
-}
-
-
-double getWidth()
-{
-	cout << 'Width is' << width << endl;
+	x2 = newX2;
 }
 
 
 
-double Rectangle::output(const double x1, const double y1, const double x2, const double y2)
+void Rectangle::setY2(double newY2)
 {
-	cout << 'x1:' << " " << x1 << endl;
-	cout << 'x2:' << " " << x2 << endl;
-	cout << 'y1:' << " " << y1 << endl;
-	cout << 'y2:' << " " << y2 << endl;
+	y2 = newY2;
 }
-double Rectangle::length(const double x1, const double x2)
+
+
+double Rectangle::getLength()
 {
-	length = x2 - x1;
+	return this->length;
 }
-double Rectangle::width(const double y1, const double y2)
+
+
+double Rectangle::getWidth()
 {
-	width = y2 - y1;
+	return this->width;
 }
-double Rectangle::getArea(const unsigned double length, const unsigned double width, const double area)
+
+
+
+double Rectangle::getX1()
 {
-	area = length * width
+	return this->x1;
 }
-void Rectangle::move(const unsigned double length, const unsigned double width, const double x1, const double y1)
+double Rectangle::getY1()
 {
+	return this->y1;
+}
+double Rectangle::getX2()
+{
+	return this->x2;
+}
+double Rectangle::getY2()
+{
+	return this->y2;
+}
+double Rectangle::Length(const double x1, const double x2)
+{
+	double length = x2 - x1;
+	return length
+}
+double Rectangle::Width(const double y1, const double y2)
+{
+
+	double width = y2 - y1;
+	return width;
+}
+unsigned double Rectangle::Area(const unsigned double length, const unsigned double width)
+{
+	unsigned double area = length * width;
+		return area;
+}
+void Rectangle::Move(const unsigned double length, const unsigned double width, const double x1, const double y1)
+{
+	setX1(x1);
+	setY1(y1);
+	setX2(x1 + length);
+	setY2(y1 + width);
 
 }
