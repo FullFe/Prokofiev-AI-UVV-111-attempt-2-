@@ -1,16 +1,12 @@
 #include <iostream>
 #include "Rectangle.h"
-#include <string>
-
-
-using namespace std;
 
 int main()
 {
-
-	const auto Primer = Rectangle(1, 2, 3, 4);
-	Primer.output();
-
-
-	return 0;
+	Rectangle test1(1 ,2, 10, 30);
+	Rectangle test2(7, 5);
+	cout << test1.Area() << endl;
+	test1.Move();
+	cout << test1.getX1() << endl;
+	//dd
 }

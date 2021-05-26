@@ -1,99 +1,106 @@
-п»ї#pragma once
+#pragma once
 using namespace std;
 /**
-* \brief РљР»Р°СЃСЃ РџСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє
+* \brief Класс Прямоугольник
 */
 class Rectangle
 {
 private:
-    double area;
     /**
-    * \brief РљРѕРѕСЂРґРёРЅР°С‚Р° Р»РµРІРѕРіРѕ РІРµСЂС…РЅРµРіРѕ СѓРіР»Р° РїРѕ РѕСЃРё X
+    * \brief Координата левого верхнего угла по оси X
     */
     double x1;
 
     /**
-    * \brief РљРѕРѕСЂРґРёРЅР°С‚Р° Р»РµРІРѕРіРѕ РІРµСЂС…РЅРµРіРѕ СѓРіР»Р° РїРѕ РѕСЃРё Y
+    * \brief Координата левого верхнего угла по оси Y
     */
     double y1;
 
     /**
-    * \brief РљРѕРѕСЂРґРёРЅР°С‚Р° РїСЂР°РІРѕРіРѕ РЅРёР¶РЅРµРіРѕ СѓРіР»Р° РїРѕ РѕСЃРё X
+    * \brief Координата правого нижнего угла по оси X
     */
     double x2;
 
     /**
-    * \brief РљРѕРѕСЂРґРёРЅР°С‚Р° РїСЂР°РІРѕРіРѕ РЅРёР¶РЅРµРіРѕ СѓРіР»Р° РїРѕ РѕСЃРё Y
+    * \brief Координата правого нижнего угла по оси Y
     */
     double y2;
 
-    /**
-    * \brief РґР»РёРЅР°
-    */
-    unsigned double length;
+    ///**
+    //* \brief длина
+    //*/
+    //double length;
 
-    /**
-    * \brief С€РёСЂРёРЅР°
-    */
-    unsigned double width;
-    double setLength()
-    {
-    }
-    double setWidth()
-    {
-    }
+    ///**
+    //* \brief ширина
+    //*/
+    //double width;
+   
 
 public:
 
     /**
-    * \brief РџР°СЂР°РјРµС‚СЂРёС‡РµСЃРєРёР№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
-    * \param x1 : РљРѕРѕСЂРґРёРЅР°С‚Р° Р»РµРІРѕРіРѕ РІРµСЂС…РЅРµРіРѕ СѓРіР»Р° РїРѕ РѕСЃРё X
-    * \param y1 : РљРѕРѕСЂРґРёРЅР°С‚Р° Р»РµРІРѕРіРѕ РІРµСЂС…РЅРµРіРѕ СѓРіР»Р° РїРѕ РѕСЃРё Y
-    * \param x2 : РљРѕРѕСЂРґРёРЅР°С‚Р° РїСЂР°РІРѕРіРѕ РЅРёР¶РЅРµРіРѕ СѓРіР»Р° РїРѕ РѕСЃРё X
-    * \param y2 : РљРѕРѕСЂРґРёРЅР°С‚Р° РїСЂР°РІРѕРіРѕ РЅРёР¶РЅРµРіРѕ СѓРіР»Р° РїРѕ РѕСЃРё Y
+    * \brief Параметрический конструктор
+    * \param x1 : Координата левого верхнего угла по оси X
+    * \param y1 : Координата левого верхнего угла по оси Y
+    * \param x2 : Координата правого нижнего угла по оси X
+    * \param y2 : Координата правого нижнего угла по оси Y
     */
     Rectangle(const double x1, const double y1, const double x2, const double y2);
 
 
     /**
-   * \brief РџР°СЂР°РјРµС‚СЂРёС‡РµСЃРєРёР№ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
-   * \param width : С€РёСЂРёРЅР°
-   * \param length : РґР»РёРЅР°
-
+   * \brief Параметрический конструктор
+   * \param width : ширина
+   * \param length : длина
    */
-    Rectangle(const unsigned double width, const unsigned double length);
+    Rectangle(const double width, const double length);
+
+    void setX1(double newX1);
+    void setX2(double newX1);
+    void setY1(double newX1);
+    void setY2(double newX1);
+
+    double getX1();
+
+    double getY1();
+
+    double getX2();
+
+    double getY2();
 
 
     /**
-    * \brief Р”РµРєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+    * \brief Деконструктор
     */
     ~Rectangle() = default;
-    
+
 
     /**
-    * \brief РњРµС‚РѕРґ РїРѕРґСЃС‡РµС‚Р° РґР»РёРЅС‹
-    * \return Р”Р»РёРЅР°
+    * \brief Метод подсчета длины
+    * \return Длина
     */
-    double Length(const double x1, const double x2);
+    double Length();
 
 
     /**
-   * \brief РњРµС‚РѕРґ РїРѕРґСЃС‡РµС‚Р° С€РёСЂРёРЅС‹
-   * \return РЁРёСЂРёРЅР°
+   * \brief Метод подсчета ширины
+   * \return Ширина
    */
-    double Width(const double y1, const double y2);
+    double Width();
 
 
     /**
-   * \brief РњРµС‚РѕРґ РїРѕР»СѓС‡РµРЅРёСЏ РїР»РѕС‰Р°РґРё
-   * \return РџР»РѕС‰Р°РґСЊ
+   * \brief Метод получения площади
+   * \return Площадь
    */
-    unsigned double Area(const unsigned double length, const unsigned double width);
+    double Area();
 
 
     /**
-   * \brief РњРµС‚РѕРґ РїРµСЂРµРјРµС‰РµРЅРёСЏ
+   * \brief Метод перемещения
    */
-    void Move(const unsigned double length, const unsigned double width, const double x1, const double y1);
+    void Move();
 
-}
+};
+//dd
