@@ -8,5 +8,5 @@ int main()
 	cout << test1.Area() << endl;
 	test1.Move();
 	cout << test1.getX1() << endl;
-	//dd
+	//ddd
 }

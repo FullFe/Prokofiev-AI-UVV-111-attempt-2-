@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include "Rectangle.h"
 
 
@@ -86,5 +86,5 @@ void Rectangle::Move()
 	setY2(y1 + Width());
 
 }
-//dd
+//ddd
 
