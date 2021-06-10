@@ -1,5 +1,7 @@
 ﻿#include "Geometry.h"
-
+#include <ostream>
+#include <iostream>
+#include <cmath>
 
 
 void Geometry::setX(double x)

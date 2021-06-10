@@ -1,8 +1,6 @@
 ﻿#pragma once
-#include <ostream>
-#include <iostream>
-#include <cmath>
-using namespace std;
+
+
 
 /**
 * \brief Класс Геометрия
