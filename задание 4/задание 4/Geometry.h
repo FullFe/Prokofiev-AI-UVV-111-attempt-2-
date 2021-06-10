@@ -21,7 +21,7 @@ protected:
 	double value;
 public:
 	/**
-* \brief Конструктор параметризованный
+* \brief Конструктор
 */
 	Geometry() = default;
 	/**
@@ -40,6 +40,9 @@ public:
 * \brief Метод подсчета значения функции
 */
 	virtual void calc();
+	/**
+	* \brief геттер X
+	*/
 	double getX() const;
 };
 
