@@ -1,18 +1,26 @@
 ﻿#include <iostream>
 #include <cmath>
+
+bool compare(double first, double second)
+{
+	return (first - second) < std::numeric_limits<double>::min();
+}
 /**
 * \brief Метод проверки ввода данных
 */
+
 inline bool not_exist_check(double a, double b, double c)
 {
-	return (a + b <= c || a + c <= b || b + c <= a);
+
+	return (compare(a + b , c)  || compare(a + c , b) || compare(b + c , a));
 }
 /**
 * \brief Метод проверки ввода
 */
 inline bool inv_val_check(double a, double b, double c)
 {
-	return (a <= 0 || b <= 0 || c <= 0);
+	double value = 0;
+	return (compare(a,value) || compare(b, value) || compare(c, value));
 }
 
 /**
