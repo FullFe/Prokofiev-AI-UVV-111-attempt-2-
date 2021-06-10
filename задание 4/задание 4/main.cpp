@@ -6,8 +6,9 @@ using namespace std;
 int main()
 {
 
-	Geometry test_1(2.0);
-	functions test_2;
+	functions test_2(2.0);
+	test_2.calc();
+	cout << test_2.getExp() << endl;
 	cout << test_2.getGipcos() << "_" << test_2.getGipsin() << endl;
 	system("pause");
 }

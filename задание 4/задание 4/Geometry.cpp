@@ -1,28 +1,27 @@
-﻿#include <iostream>
-#include "Geometry.h"
-#include <cmath>
-using namespace std;
+﻿#include "Geometry.h"
 
-Geometry::Geometry(double x)
-{
-	setX(x);
-	calc();
-}
+
+
 void Geometry::setX(double x)
 {
-	this->m_x = x;
+	m_x = x;
 }
 void Geometry::calc()
 {
-	value = exp(m_x);
+	this->value = exp(m_x);
 }
 double Geometry::getExp() const
 {
 	return value;
 }
-functions::functions()
+double Geometry::getX() const
 {
-	calc();
+	return m_x;
+}
+functions::functions(const double x)
+{
+	this->m_x = x;
+	::Geometry::calc();
 }
 double functions::getGipsin() const
 {
@@ -40,8 +39,9 @@ double functions::getX() const
 {
 	return m_x;
 }
+
 void functions::calc()
 {
-	value_a = (getExp() + (1 / getExp())) / 2;
-	value_b = (getExp() - (1 / getExp())) / 2;
+	value_a = (exp(m_x) + (1 / exp(m_x))) / 2;
+	value_b = (exp(getX()) - (1 / exp(getX()))) / 2;
 }

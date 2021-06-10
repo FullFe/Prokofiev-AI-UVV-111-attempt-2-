@@ -1,5 +1,9 @@
 ﻿#pragma once
 #include <ostream>
+#include <iostream>
+#include <cmath>
+using namespace std;
+
 /**
 * \brief Класс Геометрия
 */
@@ -19,7 +23,7 @@ public:
 	/**
 * \brief Конструктор параметризованный
 */
-	Geometry(double x = 0);
+	Geometry() = default;
 	/**
 * \brief сеттер X
 */
@@ -33,9 +37,10 @@ public:
 */
 	double getExp() const;
 	/**
-* \brief Метод подсчета значения функции 
+* \brief Метод подсчета значения функции
 */
 	virtual void calc();
+	double getX() const;
 };
 
 /**
@@ -44,6 +49,7 @@ public:
 class functions : public Geometry
 {
 private:
+
 	/**
 * \brief поле значения гиперболического синуса
 */
@@ -56,7 +62,7 @@ public:
 	/**
 * \brief Конструктор
 */
-	functions();
+	functions(double x);
 	/**
 * \brief Деконструктор
 */
@@ -75,4 +81,5 @@ public:
 * \brief Переопределение метода подсчета значения функции
 */
 	void calc();
+
 };
