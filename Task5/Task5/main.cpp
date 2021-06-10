@@ -1,4 +1,4 @@
-#include "trngl.cpp"
+п»ї#include "trngl.cpp"
 
 int main()
 {
@@ -87,4 +87,4 @@ int main()
 	system("pause");
 	return 0;
 }
-// гитхаб задание 5
+// РіРёС‚С…Р°Р± Р·Р°РґР°РЅРёРµ 5

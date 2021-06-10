@@ -1,17 +1,23 @@
 ﻿#include <iostream>
 #include <cmath>
-
+/**
+* \brief Метод проверки ввода данных
+*/
 inline bool not_exist_check(double a, double b, double c)
 {
 	return (a + b <= c || a + c <= b || b + c <= a);
 }
-
+/**
+* \brief Метод проверки ввода
+*/
 inline bool inv_val_check(double a, double b, double c)
 {
 	return (a <= 0 || b <= 0 || c <= 0);
 }
 
-//Мой класс исключений
+/**
+* \brief Мой класс исключений
+*/
 class my_exception
 {
 public:
@@ -26,12 +32,16 @@ public:
 	}
 };
 
-//Пустой класс
+/**
+* \brief Пустой класс
+*/
 class null_exception
 {
 };
 
-//Мое исключение, наследник стандартного класса exception
+/**
+* \brief Мое исключение, наследник стандартного класса exception
+*/
 class invalid_value : public std::exception
 {
 public:
@@ -41,7 +51,9 @@ public:
 	}
 };
 
-//без спецификации исключений
+/**
+* \brief без спецификации исключений
+*/
 inline double perimeter_1(double a, double b, double c)
 {
 	if (not_exist_check(a, b, c) || inv_val_check(a, b, c))
@@ -49,7 +61,9 @@ inline double perimeter_1(double a, double b, double c)
 	return (a + b + c);
 };
 
-//со спецификацией throw();
+/**
+* \brief со спецификацией throw();
+*/
 inline double perimeter_2(double a, double b, double c) throw()
 {
 	if (not_exist_check(a, b, c) || inv_val_check(a, b, c))
@@ -57,7 +71,9 @@ inline double perimeter_2(double a, double b, double c) throw()
 	return (a + b + c);
 };
 
-//с конкретной спецификацией с подходящим стандартным исключением;
+/**
+* \brief с конкретной спецификацией с подходящим стандартным исключением
+*/
 inline double perimeter_3(double a, double b, double c) throw(std::invalid_argument)
 {
 	if (not_exist_check(a, b, c) || inv_val_check(a, b, c))
@@ -65,7 +81,9 @@ inline double perimeter_3(double a, double b, double c) throw(std::invalid_argum
 	return (a + b + c);
 }
 
-//Спецификация с собственным реализованным исключением (независимый класс с полями-параметрами функции)
+/**
+* \brief Спецификация с собственным реализованным исключением (независимый класс с полями-параметрами функции)
+*/
 inline double perimeter_4_1(double a, double b, double c) throw(my_exception)
 {
 	if (not_exist_check(a, b, c) || inv_val_check(a, b, c))
@@ -73,7 +91,9 @@ inline double perimeter_4_1(double a, double b, double c) throw(my_exception)
 	return (a + b + c);
 }
 
-//Спецификация с собственным реализованным исключением (пустой класс)
+/**
+* \brief Спецификация с собственным реализованным исключением (пустой класс)
+*/
 inline double perimeter_4_2(double a, double b, double c) throw(null_exception)
 {
 	if (not_exist_check(a, b, c) || inv_val_check(a, b, c))
@@ -81,7 +101,9 @@ inline double perimeter_4_2(double a, double b, double c) throw(null_exception)
 	return (a + b + c);
 }
 
-//Спецификация с собственным реализованным исключением (наследник от стандартного исключения с полями)
+/**
+* \brief Спецификация с собственным реализованным исключением (наследник от стандартного исключения с полями)
+*/
 inline double perimeter_4_3(double a, double b, double c)
 {
 	if (not_exist_check(a, b, c) || inv_val_check(a, b, c))
